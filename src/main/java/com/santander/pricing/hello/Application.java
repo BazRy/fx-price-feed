@@ -35,7 +35,7 @@ public class Application {
 
 		// Send a message with a POJO - the template reuse the message converter
 		System.out.println("Sending an email message.");
-		jmsTemplate.convertAndSend("mailbox", "info@example.com");
+		jmsTemplate.convertAndSend("prices", "info@example.com");
 	}
 
 }
