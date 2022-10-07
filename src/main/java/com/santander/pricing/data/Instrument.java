@@ -1,8 +1,8 @@
 package com.santander.pricing.data;
 
-import com.google.common.base.Enums;
 import com.google.common.collect.Maps;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public enum Instrument {
@@ -16,8 +16,7 @@ public enum Instrument {
         this.instrumentId = instrumentId;
     }
 
-    private static final Map<String, Instrument> instrumentsById =
-            Maps.newHashMapWithExpectedSize(Instrument.values().length);
+    private static final Map<String, Instrument> instrumentsById =  Maps.newHashMapWithExpectedSize(Instrument.values().length);
 
     static {
         for (Instrument instrument : Instrument.values()) {
