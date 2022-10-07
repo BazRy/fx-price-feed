@@ -1,9 +1,7 @@
 package com.santander.pricing.process;
 
 import com.google.common.collect.Lists;
-import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.santander.pricing.data.Instrument;
 import com.santander.pricing.data.Price;
 import com.santander.pricing.messaging.PriceListener;
@@ -14,17 +12,16 @@ import okio.Buffer;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static com.santander.pricing.process.PriceProcessor.URL_PATH;
-import static com.santander.pricing.process.PriceProcessor.PORT;
 
 import java.io.ByteArrayOutputStream;
-import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.List;
 
 import static com.santander.pricing.TestConstants.csvPrices;
+import static com.santander.pricing.process.PriceProcessor.PORT;
+import static com.santander.pricing.process.PriceProcessor.URL_PATH;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PriceProcessorTest {
 

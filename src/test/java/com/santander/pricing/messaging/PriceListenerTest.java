@@ -3,7 +3,6 @@ package com.santander.pricing.messaging;
 import com.google.common.collect.Lists;
 import com.santander.pricing.data.Price;
 import com.santander.pricing.process.PriceTransformer;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,15 +16,12 @@ class PriceListenerTest {
 	final PriceListener listener = new PriceListener();
 	final MessageListenerCallback<List<String>> callback = rawPrices -> process(rawPrices);
 
-	@BeforeAll
-	void setup() {
-		listener.registerCallback(callback);
-	}
-
 	final List<Price> prices = Lists.newArrayList();
 
 	@Test
 	void testOnMessage() {
+		//assemble
+		listener.registerCallback(callback);
 		//act
 		listener.onMessage(csvPrices);
 
